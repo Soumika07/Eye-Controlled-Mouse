@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Eye Controlled Mouse</title>
+    <style>
+        body {
+            background: #111;
+            color: #0f0;
+            text-align: center;
+            font-family: Arial;
+        }
+        h1 {
+            margin-top: 70px;
+            font-size: 48px;
+        }
+        button {
+            margin-top: 60px;
+            padding: 18px 45px;
+            font-size: 24px;
+            background: #00ff88;
+            border: none;
+            color: #000;
+            border-radius: 15px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #55ffbb;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Eye Controlled Mouse</h1>
+    <p>Click below to activate eye locking & cursor control</p>
+
+    <button onclick="startSystem()">START EYE CONTROL SYSTEM</button>
+
+    <script>
+        function startSystem() {
+            fetch("/start-system")
+                .then(res => res.json())
+                .then(data => {
+                    alert("Eye Control System Started!");
+                });
+        }
+    </script>
+
+</body>
+</html>
